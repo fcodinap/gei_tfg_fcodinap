@@ -37,6 +37,10 @@
 - Seguir la resta d'instruccions per el correcte *import* dels projectes.  
 - Les comandes de configuracions dels dispositius poden ser diferents per altres models. En cas d'utilitzar el mateix model aquestes configuracions es poden copiar i engaxar directament.
 - En cas de reutilitzar una xarxa, cal restablir els valors de fàbrica abans de carregar una nova configuració per evitar problemes. Es pot realitzar amb les següents comandes:  
-  - `enable`   
-  - `write erase`   
-  - `reload`  
+
+Set device to default conf:  
+
+    enable  
+    write erase  
+    reload  
+    
