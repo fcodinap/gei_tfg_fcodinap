@@ -9,10 +9,10 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
   
 SECRETS  
 
->ENABLE MODE :: tfg
->CONSOLE     :: tfg
->TELNET      :: tfg
->SSH         :: tfg
+>ENABLE MODE :: tfg  
+>CONSOLE     :: tfg  
+>TELNET      :: tfg  
+>SSH         :: tfg  
   
 &nbsp;  
   
