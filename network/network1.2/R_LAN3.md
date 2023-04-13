@@ -31,7 +31,7 @@ exit
 service dhcp
 
 interface g0/0
-ip address 100.64.0.3 255.255.255.0
+ip address 100.64.0.4 255.255.255.0
 no shutdown
 
 exit
