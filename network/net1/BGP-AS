@@ -9,6 +9,8 @@
   * CONSOLE :: tfg
   * TELNET :: tfg
 
+``` 
+  
 enable
 conf t
 hostname BNG_AS
@@ -40,3 +42,5 @@ ip route 10.0.0.0 255.255.255.0 10.0.0.2
 ip route 192.168.0.0 255.255.0.0 10.0.0.2
 
 exit
+
+```  
