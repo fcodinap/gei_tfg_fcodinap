@@ -1,17 +1,21 @@
-# LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
-  * 192.168.ID.1 AS LAN GW ON INTERFACE G0/1
-  * PPoE SERVER ASSIGNED CGNAT IP 100.64.0.2 ON INTERFACE G0/1
-  * AS DHCP SERVER FOR LAN
-  * STATIC ROUTING
-  * TELNET
-  * SSH
-  
-# SECRETS
-  * ENABLE MODE :: tfg
-  * CONSOLE     :: tfg
-  * TELNET      :: tfg
-  * SSH         :: tfg
+LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE  
 
+>192.168.ID.1 AS LAN GW ON INTERFACE G0/1  
+>PPoE SERVER ASSIGNED CGNAT IP 100.64.0.2 ON INTERFACE G0/1  
+>AS DHCP SERVER FOR LAN  
+>STATIC ROUTING  
+>TELNET  
+>SSH  
+  
+SECRETS  
+
+>ENABLE MODE :: tfg
+>CONSOLE     :: tfg
+>TELNET      :: tfg
+>SSH         :: tfg
+  
+&nbsp;  
+  
 ```
 enable
 conf t
@@ -19,7 +23,7 @@ hostname LAN1
 enable secret tfg
 no ip domain lookup
 
-ip dhcp exclude-address 192.168.1.1
+ip dhcp excluded-address 192.168.1.1
 ip dhcp pool LANPOOL
 network 192.168.1.0 255.255.255.0
 default-router 192.168.1.1
