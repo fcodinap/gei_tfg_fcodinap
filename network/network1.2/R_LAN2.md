@@ -65,7 +65,8 @@ aaa authorization console
 
 ip domain-name tfg.uoc
 crypto key generate rsa 
-# Select 1024
+# Select 1024  
+
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 ip route 192.168.1.0 255.255.255.0 100.64.0.2
 ip route 192.168.3.0 255.255.255.0 100.64.0.4
