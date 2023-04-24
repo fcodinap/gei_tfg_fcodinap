@@ -32,10 +32,6 @@ exit
 
 service dhcp
 
-interface g0/0
-ip address 100.64.0.3 255.255.255.0
-no shutdown
-
 interface g0/1
 ip address 192.168.2.1 255.255.255.0
 no shutdown
@@ -65,7 +61,20 @@ aaa authorization console
 
 ip domain-name tfg.uoc
 crypto key generate rsa 
-# Select 1024  
+1024  
+
+interface dialer 1
+mtu 1492
+encapsulation ppp
+ip address negotiated 
+ppp chap hostname client
+ppp chap password tfg
+dialer pool 1
+no shut
+
+interface g0/0
+pppoe-client dial-pool-number 1
+no shut
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 ip route 192.168.1.0 255.255.255.0 100.64.0.2
