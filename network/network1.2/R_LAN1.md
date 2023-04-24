@@ -62,7 +62,8 @@ aaa authorization exec default local if-authenticated
 aaa authorization console
 
 ip domain-name tfg.uoc
-crypto key generate rsa 
+crypto key generate rsa
+1024
 
 interface dialer 1
 mtu 1492
