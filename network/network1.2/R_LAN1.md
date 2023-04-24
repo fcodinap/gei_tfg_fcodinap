@@ -9,7 +9,7 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
   
 SECRETS  
 
->USERNAME    :: admin
+>USERNAME    :: admin  
 >ENABLE MODE :: tfg  
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
