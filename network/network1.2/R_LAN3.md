@@ -20,11 +20,11 @@ SECRETS
 ```
 enable
 conf t
-hostname LAN2
+hostname LAN3
 enable secret tfg
 no ip domain lookup
 
-ip dhcp excluded-address 192.168.2.1
+ip dhcp excluded-address 192.168.3.1
 ip dhcp pool LANPOOL
 network 192.168.3.0 255.255.255.0
 default-router 192.168.3.1
@@ -33,10 +33,6 @@ dns-server 192.168.3.1
 exit
 
 service dhcp
-
-interface g0/0
-ip address 100.64.0.4 255.255.255.0
-no shutdown
 
 interface g0/1
 ip address 192.168.3.1 255.255.255.0
@@ -66,7 +62,19 @@ aaa authorization exec default local if-authenticated
 aaa authorization console
 
 ip domain-name tfg.uoc
-crypto key generate rsa 
+crypto key generate rsa
+1024
+
+interface dialer 1
+mtu 1492
+encapsulation ppp
+ip address negotiated 
+ppp chap hostname client
+ppp chap password tfg
+dialer pool 1
+
+interface g0/0
+pppoe-client dial-pool-number 1
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 ip route 192.168.2.0 255.255.255.0 100.64.0.3
