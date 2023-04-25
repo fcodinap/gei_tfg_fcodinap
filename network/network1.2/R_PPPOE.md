@@ -42,18 +42,26 @@ login
 transport input ssh
 transport output ssh
 
+exit
+
+---------
+
+
+
+
+
 interface virtual-template 1
 ip address 100.64.0.1 255.255.255.0
 mtu 1492
 peer default ip address dhcp-pool CLIENT
 ppp authentication chap callin
-no shutdown
 
 ip dhcp pool CLIENT
 network 100.64.0.0 /24
 default-router 100.64.0.1
 
 ip dhcp excluded-address 100.64.0.1
+
 
 username client password tfg
 
@@ -62,14 +70,12 @@ virtual-template 1
 
 int g0/1
 pppoe enable group global
-no shutdown
+
+----------
 
 exit
 
 ip route 0.0.0.0 0.0.0.0 10.0.0.5
-ip route 192.168.1.0 255.255.255.0 100.64.0.2
-ip route 192.168.2.0 255.255.255.0 100.64.0.3
-ip route 192.168.3.0 255.255.255.0 100.64.0.4
 
 exit
 wr  

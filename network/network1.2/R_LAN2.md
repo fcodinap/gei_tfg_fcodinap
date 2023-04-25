@@ -70,15 +70,14 @@ ip address negotiated
 ppp chap hostname client
 ppp chap password tfg
 dialer pool 1
-no shut
+
+no shutdown
 
 interface g0/0
 pppoe-client dial-pool-number 1
 no shut
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
-ip route 192.168.1.0 255.255.255.0 100.64.0.2
-ip route 192.168.3.0 255.255.255.0 100.64.0.4
 
 exit
 wr
