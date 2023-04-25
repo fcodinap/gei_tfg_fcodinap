@@ -14,14 +14,11 @@
 **Descripció:**  
 
 - Aquesta xarxa no incorpora cap dispositiu addicional respecte la xarxa 1.1
-
 - S'ha implementat un servidor PPPoE que assigna adreces als encaminadors clients de les LAN amb adreces de l'espai CGNAT 
-
 - Els encaminadors NAT implementen DHCP per a les LAN
-
 - S'implementa protocol d'encaminament BGP als encaminadors PEER-AS i BGP-AS, amb assinació d'ASN 22222 i 11111 respectivament
-
 - Es realitza una traducció NAT a nivell d'accés (adreces privades --> adreces CGNAT)
+- Amb la implementació de PPPoE ja hi ha limitacions de connectivitat entre les LAN
 
 ---
 **Dispositius:**  
