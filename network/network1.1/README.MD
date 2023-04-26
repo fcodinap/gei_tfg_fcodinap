@@ -2,7 +2,7 @@
 
 ---
 
-![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network1.1\net1.png)
+![](network/network1.1/net1.png)
 
 ---
 **Versió:** *1.0*  
@@ -12,16 +12,14 @@
 
 ---
 **Descripció:**  
+  
+Per a aquesta primer versió de la xarxa d'una ISP s'ha creat una topologia bàsica juntament amb les configuracions necessàries per al correcte funcionament d'aquesta. Si bé aquesta xarxa no representa un sistema real, ja que no hi ha cap protocol d'encaminament o mesures de seguretat i control de flux implementats, aquesta xarxa permetrà posar en pràctica tecniques bàsiques de cada fase de l'auditoria.
 
+**Detalls:**
 - Aquesta primera xarxa s'ha dissenyat per poder posar a prova diferents técniques bàsiques d'escaneig, ennumeració i explotació. 
-
 - No hi ha elements de seguretat implementats i tots els dispositius disposen de connectivitat amb la resta. 
-
-- L'assignació d'adreces a nivell d'accés es realitza de manera estàtica  així com també l'encaminament, que s'ha 
-realitzat de manera estàtica. 
-
+- L'assignació d'adreces a nivell d'accés es realitza de manera estàtica  així com també l'encaminament, que s'ha realitzat de manera estàtica. 
 - No s'incorporen traduccions NAT ni a nivell d'accés ni a nivell de distribució.
-
 - L'equip des d'on es realitzaran les diferents proves es troba situat a la LAN 3, per tant l'accés a la xarxa es realitza 
 de manera interna.
 
