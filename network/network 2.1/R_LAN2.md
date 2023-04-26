@@ -9,33 +9,33 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
   
 SECRETS  
 
->USERNAME    :: admin  
+>USERNAME    :: admin
 >ENABLE MODE :: tfg  
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
->SSH         :: tfg  
+>SSH         :: tfg    
   
 &nbsp;  
   
 ```
 enable
 conf t
-hostname LAN3
+hostname LAN2
 enable secret tfg
 no ip domain lookup
 
-ip dhcp excluded-address 192.168.3.1
+ip dhcp excluded-address 192.168.2.1
 ip dhcp pool LANPOOL
-network 192.168.3.0 255.255.255.0
-default-router 192.168.3.1
-dns-server 192.168.3.1
+network 192.168.2.0 255.255.255.0
+default-router 192.168.2.1
+dns-server 192.168.2.1
 
 exit
 
 service dhcp
 
 interface g0/1
-ip address 192.168.3.1 255.255.255.0
+ip address 192.168.2.1 255.255.255.0
 ip nat inside
 no shutdown
 
@@ -63,8 +63,8 @@ aaa authorization exec default local if-authenticated
 aaa authorization console
 
 ip domain-name tfg.uoc
-crypto key generate rsa
-1024
+crypto key generate rsa 
+1024  
 
 interface dialer 1
 mtu 1492
@@ -82,11 +82,11 @@ pppoe-client dial-pool-number 1
 
 exit
 
-ip nat pool LANPOOL 192.168.3.1 192.168.1.254 netmask 255.255.255.0
-access-list 1 permit 192.168.3.0 0.0.0.255
-ip nat inside source list 1 interface dialer 1
+ip nat pool LANPOOL 192.168.2.1 192.168.2.254 netmask 255.255.255.0
+access-list 1 permit 192.168.2.0 0.0.0.255
+ip nat inside source list 1 pool LANPOOL overload
 
-access-list 110 permit icmp any any
+exit
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 

@@ -36,6 +36,7 @@ service dhcp
 
 interface g0/1
 ip address 192.168.1.1 255.255.255.0
+ip nat inside
 no shutdown
 
 exit
@@ -72,11 +73,20 @@ ip address negotiated
 ppp chap hostname client
 ppp chap password tfg
 dialer pool 1
+ip nat outside
 
 no shutdown
 
 interface g0/0
 pppoe-client dial-pool-number 1
+
+exit
+
+ip nat pool LANPOOL 192.168.1.1 192.168.1.254 netmask 255.255.255.0
+access-list 1 permit 192.168.1.0 0.0.0.255
+ip nat inside source list 1 interface dialer 1
+
+access-list 110 permit icmp any any
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 

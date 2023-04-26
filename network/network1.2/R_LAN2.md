@@ -1,9 +1,11 @@
 LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE  
 
 >192.168.ID.1 AS LAN GW ON INTERFACE G0/1  
->STATIC CGNAT IP 100.64.0.3 ON INTERFACE G0/1  
+>PPoE SERVER ASSIGNED CGNAT IP 100.64.0.2 ON INTERFACE G0/1  
+>AS DHCP SERVER FOR LAN  
 >STATIC ROUTING  
 >TELNET  
+>SSH  
   
 SECRETS  
 
@@ -34,6 +36,7 @@ service dhcp
 
 interface g0/1
 ip address 192.168.2.1 255.255.255.0
+ip nat inside
 no shutdown
 
 exit
@@ -70,12 +73,20 @@ ip address negotiated
 ppp chap hostname client
 ppp chap password tfg
 dialer pool 1
+ip nat outside
 
 no shutdown
 
 interface g0/0
 pppoe-client dial-pool-number 1
-no shut
+
+exit
+
+ip nat pool LANPOOL 192.168.2.1 192.168.1.254 netmask 255.255.255.0
+access-list 1 permit 192.168.2.0 0.0.0.255
+ip nat inside source list 1 interface dialer 1
+
+access-list 110 permit icmp any any
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 
