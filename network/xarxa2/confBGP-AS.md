@@ -4,12 +4,16 @@ BNG-AS ROUTER CONFIGURATIONS FOR THIS NETWORK INCLUDE
 >10.0.0.1 255.255.255.252 MANAGEMENT IP ADDRESS ON G0/1 (*GSN3 ONLY ALLOWS FE PORTS)  
 >STATIC ROUTING  
 >TELNET  
+>SSH 
+>BGP ASN 1111 / ID 1.1.1.1
   
 SECRETS  
   
+>USERNAME    :: admin  
 >ENABLE MODE :: tfg  
->CONSOLE :: tfg  
->TELNET :: tfg  
+>CONSOLE     :: tfg  
+>TELNET      :: tfg  
+>SSH         :: tfg 
   
 &nbsp;  
   

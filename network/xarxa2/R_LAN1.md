@@ -87,6 +87,8 @@ access-list 1 permit 192.168.1.0 0.0.0.255
 ip nat inside source list 1 interface dialer 1
 
 access-list 110 permit icmp any any
+access-list 110 permit tcp any any
+access-list 110 permit ip any any
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 

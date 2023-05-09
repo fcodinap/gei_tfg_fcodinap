@@ -82,11 +82,13 @@ pppoe-client dial-pool-number 1
 
 exit
 
-ip nat pool LANPOOL 192.168.3.1 192.168.1.254 netmask 255.255.255.0
+ip nat pool LANPOOL 192.168.3.1 192.168.3.254 netmask 255.255.255.0
 access-list 1 permit 192.168.3.0 0.0.0.255
 ip nat inside source list 1 interface dialer 1
 
 access-list 110 permit icmp any any
+access-list 110 permit tcp any any
+access-list 110 permit ip any any
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
 
