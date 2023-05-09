@@ -6,6 +6,7 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
 >STATIC ROUTING  
 >TELNET  
 >SSH  
+>SNMP
   
 SECRETS  
 
@@ -14,6 +15,8 @@ SECRETS
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
 >SSH         :: tfg  
+>COMMUNITY STRING R/O :: public
+>COMMUNITY STRING W/R :: private
   
 &nbsp;  
   
