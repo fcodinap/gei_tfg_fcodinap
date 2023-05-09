@@ -21,18 +21,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Ungra/Documents/GitHub/gei_tfg_fcodinap/network/network 2.1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ungra/Documents/GitHub/gei_tfg_fcodinap/network/network 2.1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network 2.1" />
       <recent name="C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network1.2" />
       <recent name="C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network1.1" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\tools\NMAP" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
