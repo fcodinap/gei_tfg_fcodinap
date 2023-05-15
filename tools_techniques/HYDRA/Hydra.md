@@ -1,7 +1,8 @@
-Eina
-Hydra
-Lloc Official
-https://github.com/vanhauser-thc/thc-hydra
+## Hydra
+### Lloc Official Eina
+- https://github.com/vanhauser-thc/thc-hydra
+
+--- 
 
 ### Accés a mode privilegiat 
 
@@ -41,6 +42,8 @@ i introduir la clau trobada.
 
 Rarament resultarà tant senzill, pero d'assolir aquest nivell d'accés es podria dir que es te control gairebe complert 
 sobre aquell domini de la xarxa i totes les funcions o serveis que el dispositiu pogués oferir.
+
+---  
 
 ### Accés a mode privilegiat en dispositius Cisco sense coneixer les credencials d'accés
 
