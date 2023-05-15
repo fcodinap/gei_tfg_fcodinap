@@ -4,7 +4,7 @@
 
 --- 
 
-### Accés a mode privilegiat 
+### Accés a mode privilegiat Cisco Enable
 
 #### Requisitis  
 - Accés remot al dispositiu  
@@ -99,5 +99,46 @@ en el que es trobi el procés de pentest. Alhora, resultarà de molta utilitat d
 dispositius i dels manuals corresponents d’aquests per poder aprofitar aquest accés, informació que s’hauria d’haver 
 recopilat una vegada descoberts els dispositius a la fase d’escaneig.
 
+---  
 
+### Obtenció de SNMP Community Strings
+
+#### Requisitis   
+- Diccionari de *Community Strings*.  
+- Servei SNMP actiu (161/162)
+
+Un altre ús interessant d'Hydra de cara a obtenir informació addicional sobre el dispositiu és la de l'obtenció de *CommunittyStrings*
+que es podran utilitzar en d'altres atacs. El módul `snmp` d'hydra utilitzarà una llista de possibles valors i retornarà
+tots aquells que s'hagin configurat en un dispositiu.
+
+#### Comanda  
+`hydra -P <communitystrings.txt> <adreça_objectiu> <modul>`
+
+#### Opcions i Paràmetres Especials
+`-P <wordlist>:` diccionari
+
+#### Execució 
+
+Si el port que utilitza SNMP s'ha pgut determinar com obert en el dispositiu d'encaminament, mitjançant una possible llista
+de community trings per defecte o possibles, podem posar a prova el dispositiu per veure si ens retorna resultats positius.
+
+`hydra -P passdict.txt 100.64.0.2 snmp`
+  
+![img_4.png](img_4.png)  
+  
+Addicionalment, com que aquesta informació s'utilitzarà en futures explotacions, resultarà d'interés emmagatzemar totes 
+aquelles strings que es trobin. Així doncs redirigirem l'output per poder disposar d'ell en forma de llista.
+
+`hydra -P passdict.txt 100.64.0.2 snmp | grep password: | awk '{print $5}' >> com_strings.txt`
+
+`cat com_strings.txt` 
+> figrau  
+> tfg  
+
+>**Nota:** Caldrà coneixer la versió de SNMP que s'utilitza en aquell dispositiu així com d'altres paràmetres. Les opcions
+> addicionals que es poden utilitzar per al módul SNMP d'Hydra són els següents:
+
+`hydra snmp -U`  
+  
+![img_5.png](img_5.png)  
 
