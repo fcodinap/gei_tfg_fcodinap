@@ -2,7 +2,7 @@
 
 ---
 
-![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network2.1\network2.1.png)
+![img.png](img.png)![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network2.1\network2.1.png)
 
 ---
 **Versió:** *2.1*  

@@ -5,7 +5,8 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
 >AS DHCP SERVER FOR LAN  
 >STATIC ROUTING  
 >TELNET  
->SSH  
+>SSH 
+>SNMP
   
 SECRETS  
 
@@ -13,7 +14,9 @@ SECRETS
 >ENABLE MODE :: tfg  
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
->SSH         :: tfg  
+>SSH         :: tfg 
+>COMMUNITY STRING R/O :: public
+>COMMUNITY STRING W/R :: figrau
   
 &nbsp;  
   

@@ -6,14 +6,17 @@ LAN ROUTERS CONFIGURATION FOR THIS NETWORK INCLUDE
 >STATIC ROUTING  
 >TELNET  
 >SSH  
+>SNMP
   
 SECRETS  
 
->USERNAME    :: admin
+>USERNAME    :: admin  
 >ENABLE MODE :: tfg  
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
->SSH         :: tfg    
+>SSH         :: tfg 
+>COMMUNITY STRING R/O :: public
+>COMMUNITY STRING W/R :: figrau   
   
 &nbsp;  
   

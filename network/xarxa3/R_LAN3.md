@@ -14,9 +14,9 @@ SECRETS
 >ENABLE MODE :: tfg  
 >CONSOLE     :: tfg  
 >TELNET      :: tfg  
->SSH         :: tfg  
+>SSH         :: tfg 
 >COMMUNITY STRING R/O :: public
->COMMUNITY STRING W/R :: private
+>COMMUNITY STRING W/R :: figrau
   
 &nbsp;  
   
