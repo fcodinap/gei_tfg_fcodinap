@@ -83,14 +83,21 @@ emmagatzemi els resultats en un arxiu d'on es puguin extreure les claus fent ús
 
 Seguidament extraiem les credencials de l'*output* i les emmagatzemem en variables.
 
->user=`grep login: ssh_results.txt | awk '{print $5}'`  
->pass=`grep login: ssh_results.txt | awk '{print $7}'`
+`user=grep login: ssh_results.txt | awk '{print $5}'`  
+`pass=grep login: ssh_results.txt | awk '{print $7}'`
 
-`hydra -l $user -f -m $password -P passdict.txt 100.64.0.2 cisco-enable`
+`hydra -l $user -f -m $pass -P passdict.txt 100.64.0.2 cisco-enable`
 
 ![img_3.png](img_3.png)
 
-I s'haurà pogut assolir l'escalada de privilegis al dispositiu.
+I s'haurà pogut assolir l'escalada de privilegis al dispositiu. En cas de tenir èxit i per tant obtenir accés privilegiat
+a algun d’aquests dispositius, es disposa de control complert sobre la configuració d’aquests: canvi d’encaminaments 
+estàtics i protocols d’encaminament, exportació/importació de configuracions, activació d’altres serveis, generació de 
+nous usuaris i claus per a obtenir persistència o fins i tot la inutilització completa de dispositiu. Aquesta situació 
+caldrà ser avaluada en funció dels objectius que es tinguin ja que pot interessar una o altra opció en funció del punt 
+en el que es trobi el procés de pentest. Alhora, resultarà de molta utilitat disposar d’experiència treballant amb aquests
+dispositius i dels manuals corresponents d’aquests per poder aprofitar aquest accés, informació que s’hauria d’haver 
+recopilat una vegada descoberts els dispositius a la fase d’escaneig.
 
 
 
