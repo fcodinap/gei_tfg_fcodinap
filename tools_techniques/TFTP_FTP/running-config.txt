@@ -1,0 +1,236 @@
+
+!
+version 15.6
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname LAN3
+!
+boot-start-marker
+boot-end-marker
+!
+!
+enable secret 5 $1$bqIo$O.4xnPkJS18iJAs9v950w1
+!
+aaa new-model
+!
+!
+aaa authentication login default local-case
+aaa authorization console
+aaa authorization exec default local if-authenticated 
+!
+!
+!
+!
+!
+aaa session-id common
+ethernet lmi ce
+!
+!
+!
+no process cpu autoprofile hog
+mmi polling-interval 60
+no mmi auto-configure
+no mmi pvc
+mmi snmp-timeout 180
+!
+!
+!
+!
+!
+no ip icmp rate-limit unreachable
+!
+!
+!
+ip dhcp excluded-address 192.168.2.1
+ip dhcp excluded-address 192.168.3.1
+!
+ip dhcp pool LANPOOL
+ network 192.168.3.0 255.255.255.0
+ default-router 192.168.3.1 
+ dns-server 192.168.3.1 
+!
+!
+!
+no ip domain lookup
+ip domain name tfg.uoc
+ip cef
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+username admin secret 5 $1$/f4a$uRPIEBNF4GvWDBY2noyR5/
+!
+redundancy
+!
+no cdp log mismatch duplex
+no cdp run
+!
+ip tcp synwait-time 5
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ media-type rj45
+ pppoe enable group global
+ pppoe-client dial-pool-number 1
+ no cdp enable
+!
+interface GigabitEthernet0/1
+ ip address 192.168.3.1 255.255.255.0
+ ip nat inside
+ ip virtual-reassembly in
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/2
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/3
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/4
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/5
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/6
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface GigabitEthernet0/7
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+ media-type rj45
+ no cdp enable
+!
+interface Dialer1
+ mtu 1492
+ ip address negotiated
+ ip nat outside
+ ip virtual-reassembly in
+ encapsulation ppp
+ dialer pool 1
+ ppp chap hostname client
+ ppp chap password 0 tfg
+ no cdp enable
+!
+ip forward-protocol nd
+!
+!
+no ip http server
+no ip http secure-server
+ip nat pool LANPOOL 192.168.3.1 192.168.3.254 netmask 255.255.255.0
+ip nat inside source list 1 interface Dialer1 overload
+ip route 0.0.0.0 0.0.0.0 100.64.0.1
+!
+!
+snmp-server community public RO
+snmp-server community private RO WR
+snmp-server chassis-id Lan3_Router
+!
+access-list 1 permit 192.168.3.0 0.0.0.255
+access-list 100 permit icmp any any
+access-list 100 permit tcp any any
+access-list 100 permit ip any any
+access-list 110 permit icmp any any
+!
+!
+!
+control-plane
+!
+banner exec 
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+banner incoming 
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+banner login 
+**************************************************************************
+* IOSv is strictly limited to use for evaluation, demonstration and IOS  *
+* education. IOSv is provided as-is and is not supported by Cisco's      *
+* Technical Advisory Center. Any use or disclosure, in whole or in part, *
+* of the IOSv Software or Documentation to any third party for any       *
+* purposes is expressly prohibited except as otherwise authorized by     *
+* Cisco in writing.                                                      *
+**************************************************************************
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ password tfg
+ logging synchronous
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+line vty 0 4
+ password tfg
+ transport input telnet
+ transport output telnet
+line vty 5
+ password tfg
+ transport input ssh
+ transport output ssh
+!
+no scheduler allocate
+!
+end

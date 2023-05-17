@@ -69,8 +69,6 @@ router bgp 1111
 bgp router-id 1.1.1.1
 neighbor 203.0.113.2 remote-as 2222
 address-family ipv4 unicast
-no network 203.0.113.0 mask 255.255.255.0
-no network 100.64.0.0 mask 255.255.255.0
 network 203.0.113.0 mask 255.255.255.0
 network 203.0.113.128 mask 255.255.255.127
 
@@ -78,7 +76,8 @@ exit
 exit
 
 ip route 0.0.0.0 0.0.0.0 203.0.113.2
-ip route 100.64.0.0 255.255.255.0 10.0.0.14
+no ip route 100.64.0.0 255.255.255.0 10.0.0.14
+ip route 203.0.113.0 255.255.255.128 10.0.0.14
 
 router ospf 100
 router-id 2.2.2.2
