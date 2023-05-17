@@ -1,17 +1,12 @@
 PEER-AS ROUTER CONFIGURATIONS FOR THIS NETWORK INCLUDE
 
->203.0.113.129 255.255.255.128 AS A PUBLIC IP ON G0/0  
->192.168.10.1 255.255.255.252 INSIDE IP ADDRESS ON G0/1 
->STATIC ROUTING  
->TELNET  
->SSH
-  
+>BGP ROUTING  
+>TODO: SOME CONFLICTS WITH PUBLIC IP ADRESSES USED. NEED TO SOLVE
+
 SECRETS  
   
->ENABLE MODE :: tfg  
->CONSOLE :: tfg  
->TELNET :: tfg  
->SSH :: tfg 
+>ENABLE MODE :: admin  
+>CONSOLE :: admin
   
 &nbsp;  
   
@@ -19,7 +14,7 @@ SECRETS
 enable
 conf t
 hostname PEER-AS
-enable secret tfg
+enable secret admin
 
 interface G0/0
 ip address 203.0.113.2 255.255.255.128
@@ -32,20 +27,18 @@ no shutdown
 exit
 
 line vty 0 4
-password tfg
-login
+password admin
 transport input telnet
 transport output telnet
 
 line vty 5
-password tfg
-login
+password admin
 transport input ssh
 transport output ssh
 
 exit
 
-username admin secret tfg
+username admin secret admin
 
 aaa new-model
 aaa authentication login default local-case

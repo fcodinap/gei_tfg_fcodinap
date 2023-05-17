@@ -6,10 +6,10 @@ OLT SWITCH CONFIGURATION FOR THIS NETWORK INCLUDES
 SECRETS  
 
 >USERNAME    :: admin  
->ENABLE MODE :: tfg  
->CONSOLE     :: tfg  
->TELNET      :: tfg  
->SSH         :: tfg  
+>ENABLE MODE :: admin  
+>CONSOLE     :: admin  
+>TELNET      :: admin  
+>SSH         :: admin  
   
 &nbsp;
   
@@ -17,17 +17,15 @@ SECRETS
 enable
 conf t
 hostname OLT
-enable secret tfg
+enable secret admin
   
 line vty 0 4
-password tfg
-login
+password admin
 transport input telnet
 transport output telnet
 
 line vty 5
 password tfg
-login
 transport input ssh
 transport output ssh
 

@@ -16,7 +16,7 @@ SECRETS
 >TELNET      :: tfg  
 >SSH         :: tfg 
 >COMMUNITY STRING R/O :: public
->COMMUNITY STRING W/R :: figrau
+>COMMUNITY STRING W/R :: private
   
 &nbsp;  
   
@@ -24,7 +24,7 @@ SECRETS
 enable
 conf t
 hostname LAN1
-enable secret tfg
+enable secret admin
 no ip domain lookup
 
 ip dhcp excluded-address 192.168.1.1
@@ -46,19 +46,21 @@ exit
 
 line vty 0 4
 password tfg
-login
 transport input telnet
 transport output telnet
 
 line vty 5
 password tfg
-login
 transport input ssh
 transport output ssh
 
 exit
 
-username admin secret tfg
+snmp-server community public RO
+snmp-server community private WR
+snmp-server chassis-id Lan1_Router
+
+username admin secret admin
 
 aaa new-model
 aaa authentication login default local-case
@@ -87,11 +89,13 @@ exit
 
 ip nat pool LANPOOL 192.168.1.1 192.168.1.254 netmask 255.255.255.0
 access-list 1 permit 192.168.1.0 0.0.0.255
-ip nat inside source list 1 pool LANPOOL overload
-
-exit
+ip nat inside source list 1 interface dialer 1
 
 ip route 0.0.0.0 0.0.0.0 100.64.0.1
+
+access-list 100 permit icmp any any
+access-list 100 permit tcp any any
+access-list 100 permit ip any any
 
 exit
 wr

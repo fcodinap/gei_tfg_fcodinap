@@ -2,13 +2,13 @@
 
 ---
 
-![img.png](img.png)![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network2.1\network2.1.png)
+![img.png](xarxa3topo.png)![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network2.1\network2.1.png)
 
 ---
 **Versió:** *2.1*  
 
 
-**Nom  :** *network2.1*  
+**Nom  :** *Xarxa 3*  
 
 ---
 **Descripció:**  
@@ -42,6 +42,7 @@ de dispositius i tampoc és viable degut als recursos necessaris i no disponible
 - S'ha afegit un dispositiu que simularà algun servei a la xarxa. S'ha decidit assignar-li una IP publica per facilitar
 la implantació.
 - No s'inclou tallafocs (*intentar fer-ho*)
+- En alguns dispositius s'ha configurat SNMPv1/2 amb community strings **READONLY** i **WRITE/READ**
 
 ---
 **Dispositius:**  
