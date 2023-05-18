@@ -80,7 +80,7 @@ de la llibreria de moduls de metasploit.
 
 #### Execució  
 
-- Metasploit
+- Metasploit  
 Iniciem el modul de metasploit i establim variables necessaries abans d'executar. S'utilitza el modul spool per dirigir
 la sortida de metasploit a un arxiu.
 

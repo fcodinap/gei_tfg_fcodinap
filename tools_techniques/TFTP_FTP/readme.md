@@ -145,7 +145,7 @@ Informació útil que cercarem entre d'altres són paquets de protocols d'encami
 paquets que puguin millorar el coneixement de la xarxa del que es disposa.  
 
 > **Note**  
-> Malauradament i degut a la versió de dispositiu virtualitzat que s'utilitza a les xarxes d'aquest treball no s'ha pogut
-> realitzar la exportació d'aquests fitxers de captura i per tant no es poden incloure imatges d'exemple.
+> Cal tenir en conte que segons regles de tallafocs o ACL existents és possible que no es pugui realitzar l'exportació.
+> Caldrà modificar aquestes de manera temporal per permetre el trànsit de paquets tftp.
 
 
