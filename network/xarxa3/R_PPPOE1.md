@@ -35,12 +35,12 @@ no shutdown
 exit
 
 line vty 0 4
-password tfg
+password admin
 transport input telnet
 transport output telnet
 
 line vty 5
-password tfg
+password admin
 transport input ssh
 transport output ssh
 
