@@ -11,7 +11,8 @@
 ### Obtenció de community strings d'un dispositiu mitjançant OneSixtyOne
 
 Per obtenir la informació d'un agent SNMP en primer lloc es necessitarà de les community strings corresponents, ja sigui 
-amb privilegis RO o amb WR. Mitjançant una llista de community strings més habituals, es pot realitzar un atac de diccionari.
+amb privilegis RO o amb WR. Mitjançant una llista de community strings més habituals, es pot realitzar un atac de diccionari
+de manera similar a com s'ha realitzat el descobriment de community strings amb l'eina Hydra.
 
 #### Requisitis  
 - Dispositius amb SNMP a l'escolta(161)
