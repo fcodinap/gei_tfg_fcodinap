@@ -71,43 +71,42 @@ propia àrea OSPF.
 
 #### Execució  
 
-Basant-se en la topologia de la Xarxa 3 el dispositiu compromés, en aquest cas la porta d'enllaç 
-d'una de les Lans a nivell d'enllaç s'ha aconseguit comprometre (accés privilegiat). Aquest és el que s'indica amb un 
-requadre en vermell.
+Basant-se en la topologia de la Xarxa 3, en aquest cas la porta d'enllaç d'una de les Lans a nivell d'enllaç s'ha pogut
+comprometre.
 
 ![img.png](img.png)
 
 Al realitzar captures de paquets sobre la interfície upstream d'aquest dispositiu s'observen entre d'altres els següents
-paquets que indiquen que OSPF podria trobar-se mal configurat i per tant seria susceptible a una explotació.
+paquets Hello que indiquen que OSPF podria trobar-se mal configurat i per tant seria susceptible a explotació
 
 ![img_1.png](img_1.png)
 
-El primer pas a dur a terme és el de poder establir adjacencia, per tant configurarem OSPF al dispositiu compromés o 
-generarem paquets OSPF amb un encaminador fals en el cas d'estar utilitzant algun routing suite per falsificar encaminadors.
-
-Per exemplificar l'atac es simplificarà la topologia de la següent manera:
+Per simplificar l'exemple dels atacs s'utilitzarà la següent topologia, de cara a reduir variables i mostrar amb més claredat
+les tecniques que es posen en pràctica en aquest apartat.
 
 ![img_8.png](img_8.png)
+
+El primer pas a dur a terme és el de poder establir adjacencia, per tant configurarem OSPF al dispositiu Atacant o generarem
+paquets OSPF amb un encaminador fals en el cas d'estar utilitzant algun routing suite per falsificar encaminadors.
 
 Es configura el dispositiu amb les comandes adients perque generi adjacencia. Les xarxes que haurà d'incloure aquest són
 aquelles per les que es reben missatges OSPF ja que així es podran modificar rutes més endavant.
 
->router ospf 123
->router-id 1.2.3.4
+>router ospf 123  
+>router-id 1.2.3.4  
 > 
->network 10.0.0.4 0.0.0.3 area 10
->network 10.0.0.8 0.0.0.3 area 10
+>network 10.0.0.4 0.0.0.3 area 10  
+>network 10.0.0.8 0.0.0.3 area 10  
 
-Es genera l'adjacencia amb tots aquells dispositius OSPF i s'inicia el procés de compartir base de dades i actualitzar
-les LSA.
+El protocol OSPF entrarà en funcionament i es genera l'adjacencia amb tots aquells dispositius OSPF i s'inicia el procés 
+de compartir base de dades i actualitzar les LSA tal i com es pot veure a la captura de trànsit de l'imatge següent.
 
 ![img_3.png](img_3.png)
 
 Arribats a aquest punt, el dispositiu atacant ja forma part de l'àrea OSPF. Ara bé, la comunicació entre Victima1 i Victima2
-encara es realitza per la ruta més curta, ja que de passar per el dispositiu atacant hauria de realitzar 2 salts.
-
-En aquest exemple es presenten dues opcions, la d'injecció d'una ruta estàtica que es distribuirà a tota l'àrea ospf i la
-de modificació de costs de rutes.
+encara es realitza per la ruta més curta, ja que de passar per el dispositiu atacant hauria de realitzar 2 salts. En aquest
+exemple es presenten dues opcions per assolir una posició MiTM, la d'injecció d'una ruta estàtica que es distribuirà a tota
+l'àrea OSPF i la de modificació de costs de rutes.
 
 - Injecció de ruta
 Des del dispositiu atacant s'indicarà a la configuració OSPF que es volen distribuir rutes amb la comanda
