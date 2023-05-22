@@ -1,5 +1,34 @@
 ## Atacs a IGPs
-  
+
+A l’interior de xarxes com la de l’AS que s’està estudiant en aquest treball s’hi poden trobar protocols d’encaminament 
+com OSPF , que s’encarreguen de distribuir els paquets cap a la ruta corresponent. Aquests resulten fonamentals per al 
+funcionament d’una xarxa i si no es troben degudament protegits poden ser un dels principals objectius d’un atacant. Tot
+i que la majoria d’atacs a aquests protocols es realitzaran disposant d’accés al dispositiu, també es poden realitzar atacs 
+sense haver d’accedir al dispositiu, simplement creant paquets artificials i enviant aquests a la xarxa per modificar el 
+comportament del protocol. En cas de realitzar-ho mitjançant la fabricació de paquets, cal tenir molt clar el funcionament 
+del protocol i l’estructura dels paquets. 
+
+Es poden assolir diferents atacs cap a OSPF així com d’altres protocols de la família IGP. La majoria treballen sobre la 
+idea d’utilitzar els missatges que els dispositius que implementen OSPF per comunicar-se entre ells com són els Hello, DBD, 
+LSR, LSU i LSAck i així modificar els estats en els que es pot trobar un dispositius que implementa aquest protocol: Down, 
+Attempt, Init, 2-Way, Exstart, Exchange, Loading i Full. 
+
+### MITM
+De la mateixa manera que mitjançant la creació de rutes estàtiques, si l’atacant simula ser un encaminador més de l’àrea 
+OSPF (o es disposa ja d’accés a un d’aquests dispositius) i les configuracions de la resta d’encaminadors que s’ataquen 
+no són les correctes, es pot arribar a redirigir tot el trànsit cap una màquina atacant que disposaria de la possibilitat 
+d’analitzar aquest trànsit. Per a realitzar-ho només caldria fabricar els paquets adients mitjançant encaminadors simulats 
+a la màquina atacant, que enviïn els paquets corresponents i estableixin que la millor ruta per a encaminar els paquets és 
+la que passa per l’encaminador fals.  
+
+Alguns routing suites  (o simuladors d’encaminadors) com Quagga , FRRrouting  o Bird entre d’altres, permetran la creació 
+d’un encaminador fals que implementarà diferents protocols d’encaminament. Una vegada es trobi tot en funcionament, amb 
+capturadors de paquets com Wireshark es podrà analitzar el trànsit de la xarxa, obtenir informació addicional i generar 
+una posició d’atac (normalment de denegació de serveis) al protocol que s’estigui utilitzant. Si en canvi es disposa d’accés 
+a un dispositiu que ja forma part de l’àrea OSPF, no caldrà enganyar a la resta de dispositius participants, simplement 
+canviant el cost de rutes es podran modificar els encaminaments per redirigir aquest trànsit cap on interessi. Les comandes 
+de configuració de protocols com OSPF es poden trobar a la documentació pertinent per a cada dispositiu.
+
 ### Open Shortest Path First (OSPF)
 
 ####  Breu Resum d'OSPF
