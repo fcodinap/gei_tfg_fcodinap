@@ -98,3 +98,28 @@ BGP també es podrà.
 En quant a les proves a realitzar per emular aquests treballs, no s'ha disposat de la suficient capacitat tecnica per dur-les
 a terme, pero s'espera poder en treballs futurs de creació de laboratoris amb GSN3, generar un entorn que permeti posar
 en pràctica aquests atacs.
+
+A tall d'exemple, el següent codi amb Scapy genera els 3 tipus principals de missatges que es podrien fer servir en atacs
+a BGP. Per altra banda no s'ha cregut necessari incloure les configuracions realitzades sobre un encaminador compromés doncs
+aquestes són senzilles i es poden trobar als corresponents manuals per cada dispositiu així com als arxius de configuració
+dels dispositius de les xarxes plantejades en aquest treball amb GSN3. Cal notar que previ enviament d'aquest missatge s'haurà 
+de realitzar una connexió TCP amb el destí, ja que tot i que tal i com s'ha descrit amb anterioritat, tot i que BGP realitza 
+funcions d'encaminament, es tracta d'un protocol a nivell d'aplicació. un exemple de la construcció amb scappy d'aquesta
+sessió es pot trobar a internet en repositoris com [aquest](https://gist.github.com/N0dr4x/ffe99618a738978605719ce525a33042)
+(*S'ha examinat el codi pero no s'ha posat a prova*).
+
+##### BGP Open Message
+
+`bgp_open = BGPOpen(version=4, my_as=1111, hold_time=180, bgp_id='1.1.1.1')`  
+`bgp_open_packet = Ether() / IP() / TCP() / bgp_open`
+
+##### BGP Keepalive Message
+
+`bgp_keep = BGPKeepAlive()`  
+`bgp_keep_packet = Ether() / IP() / TCP() / bgp_keep`  
+
+##### BGP Update Message
+
+`bgp_update = BGPUpdate(path_attr=[BGPPathAttr(), BGPPathAttr()])`  
+`bgp_update_packet = Ether() / IP() / TCP() / bgp_update`  
+

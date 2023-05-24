@@ -104,6 +104,7 @@ ip ospf transmit-delay 5
 ip ospf dead-interval 5
 
 exit
+exit
 wr
 
 ```  
