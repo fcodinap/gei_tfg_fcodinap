@@ -135,16 +135,17 @@ Per navegar i crear una nova entrada
 `workspace -a tfgMSF`  
 `workspace tfgMSF`  
 
-Les comandes per a la gestió dels espais de treballs les podem enumerar amb `workspace -h`
+Les comandes per a la gestió dels espais de treballs les podem enumerar amb   
+`workspace -h`  
 
 Un dels molts usos que es pot donar a aquesta base de dades és el d'importar els resultats d'escaneigs i ennumeracions
 realitzats amb NMAP. Amb aquestes dades, i directament des de la propia consola de MS es podran dur a terme ennumeracions
 addicionals.
 
-Per importar un fitxer
+Per importar un fitxer  
 `db_import <PATH>`  
 
-Per realitzar un escaneig que emmagatzemi les dades a la db
+Per realitzar un escaneig que emmagatzemi les dades a la db  
 `db_nmap <comanda_nmap>`  
 
 Una vegada s'ha agafat certa experiencia amb l'ús de MS i la base de dades, gran part de la fase d'escaneig i ennumeració
@@ -222,7 +223,7 @@ comandes:
 
 --- 
 
-Ror i que la majoria d'atacs a una xarxa es centraran en l'explotació d'errors de configuració en dispositius i en protocols
-d capa 2 i 3, en alguns casos es descobriran dispositius amb vulnerabilitats dels que metasploit disposarà de modul per a
+Tot i que la majoria d'atacs a una xarxa es centraran en l'explotació d'errors de configuració en dispositius i en protocols
+de capa 2 i 3, en alguns casos es descobriran dispositius amb vulnerabilitats dels que metasploit disposarà de modul per a
 executar aquesta. En tot cas, MS resulta una eina molt potent de la qual només s'ha pogut començar a aprendre el seu funcionament,
 i combinada amb d'altres eines com Meterpreter i MSVenom pot resultar de cabdal importància a l'hora de dur a terme un pentes.
