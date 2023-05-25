@@ -1,0 +1,163 @@
+snmp-check v1.9 - SNMP enumerator
+Copyright (c) 2005-2015 by Matteo Cantoni (www.nothink.org)
+
+[+] Try to connect to 100.64.0.1:161 using SNMPv1 and community 'private'
+
+[*] System information:
+
+  Host IP address               : 100.64.0.1
+  Hostname                      : PPPOE1.tfg.uoc
+  Description                   : Cisco IOS Software, IOSv Software (VIOS-ADVENTERPRISEK9-M), Version 15.6(2)T, RELEASE SOFTWARE (fc2)  Technical Support: http://www.cisco.com/techsupport  Copyright (c) 1986-2016 by Cisco Systems, Inc.  Compiled Tue 22-Mar-16 16:19 by prod_rel_team
+  Contact                       : -
+  Location                      : -
+  Uptime snmp                   : -
+  Uptime system                 : 03:47:45.44
+  System date                   : -
+
+[*] Network information:
+
+  IP forwarding enabled         : yes
+  Default TTL                   : 255
+  TCP segments received         : 7621
+  TCP segments sent             : 563
+  TCP segments retrans          : 0
+  Input datagrams               : 13681
+  Delivered datagrams           : 11661
+  Output datagrams              : 12800
+
+[*] Network interfaces:
+
+  Interface                     : [ up ] GigabitEthernet0/0
+  Id                            : 1
+  Mac Address                   : 0c:fe:a2:35:00:00
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 437609
+
+  Interface                     : [ up ] GigabitEthernet0/1
+  Id                            : 2
+  Mac Address                   : 0c:fe:a2:35:00:01
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 7436192
+  Out octets                    : 6350260
+
+  Interface                     : [ up ] GigabitEthernet0/2
+  Id                            : 3
+  Mac Address                   : 0c:fe:a2:35:00:02
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 437621
+
+  Interface                     : [ down ] GigabitEthernet0/3
+  Id                            : 4
+  Mac Address                   : 0c:fe:a2:35:00:03
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] GigabitEthernet0/4
+  Id                            : 5
+  Mac Address                   : 0c:fe:a2:35:00:04
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] GigabitEthernet0/5
+  Id                            : 6
+  Mac Address                   : 0c:fe:a2:35:00:05
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] GigabitEthernet0/6
+  Id                            : 7
+  Mac Address                   : 0c:fe:a2:35:00:06
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ down ] GigabitEthernet0/7
+  Id                            : 8
+  Mac Address                   : 0c:fe:a2:35:00:07
+  Type                          : ethernet-csmacd
+  Speed                         : 1000 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Null0
+  Id                            : 9
+  Mac Address                   : :::::
+  Type                          : other
+  Speed                         : 4294 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Virtual-Template1
+  Id                            : 10
+  Mac Address                   : :::::
+  Type                          : ppp
+  Speed                         : 100 Mbps
+  MTU                           : 1492
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Virtual-Access1
+  Id                            : 11
+  Mac Address                   : :::::
+  Type                          : ppp
+  Speed                         : 100 Mbps
+  MTU                           : 1500
+  In octets                     : 0
+  Out octets                    : 0
+
+  Interface                     : [ up ] Virtual-Access2
+  Id                            : 12
+  Mac Address                   : :::::
+  Type                          : ppp
+  Speed                         : 100 Mbps
+  MTU                           : 1492
+  In octets                     : 5253046
+  Out octets                    : 4903297
+
+  Interface                     : [ up ] Virtual-Access2.1
+  Id                            : 13
+  Mac Address                   : :::::
+  Type                          : ppp
+  Speed                         : 100 Mbps
+  MTU                           : 1492
+  In octets                     : 5288571
+  Out octets                    : 4761960
+
+
+[*] Network IP:
+
+  Id                    IP Address            Netmask               Broadcast           
+  1                     10.0.1.2              255.255.255.252       1                   
+  3                     10.0.1.9              255.255.255.252       1                   
+  13                    100.64.0.1            255.255.255.128       1                   
+
+[*] Listening UDP ports:
+
+  Local address         Local port          
+  10.0.1.2              67                  
+  10.0.1.2              162                 
+  10.0.1.2              18999               
+  10.0.1.2              53686               
+  100.64.0.1            161                 
+

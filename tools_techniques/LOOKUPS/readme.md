@@ -21,7 +21,7 @@ de les que disposa així com els prefixes.
 - Arxiu WHOIS, d’on es podrà extreure molta informació addicional de la organització.  
 - Una llista amb els prefixos IP.  
 
-#### IP LOOKUP  
+### IP LOOKUP  
 
 Els IP lookups retornaran tota la informació disponible sobre una adreça i actualment n’existeixen centenars de disponibles. 
 Un exemple (el primer que apareix en una cerca a Google) seria WhatsMyIp , on introduint una direcció IP es rebrà un resum 
@@ -47,7 +47,7 @@ permetran recuperar la mateixa informació que les versions corresponents utilit
 pot resultar més comode, mitjançat l'ús de comandes es podrà desar i tractar la informació de manera més eficaç. A continuació
 es presenten alguns exemples de lookups amb diferents comandes.
 
-##### Lookups mitjançant comandes
+#### Lookups mitjançant comandes
 
 En molts casos al realitzar un pentest sobre una xarxa es disposarà únicament d'un conjunt d'adreces públiques que pertànyen
 a la ISP sobre la que s'està treballant. Mitjançant aquestes adreces es pot realitzar una cerca d'informació fent ús de la
@@ -68,13 +68,14 @@ a partir de les opcions que es poden veure a `man dig`.
 Els resultats es presenten en les següents columnes: ASN, Prefixe, Pais, RIR i data d'assignació. Aquest resultat es pot
 començar a emmagatzemar per al procés de recerca d'informació i el seu ús posterior.
 
-> "205715 | 5.59.171.0/24 | CZ | ripencc | 2012-06-04"
+> "205715 | 5.59.171.0/24 | CZ | ripencc | 2012-06-04"  
 
-`ASN=cat dig_lookup.txt | sed 's/["]//g' | awk '{print $1}'`
-`IP=cat dig_lookup.txt | sed 's/["]//g' | awk -F'|' '{print $2}'`
+`ASN=cat dig_lookup.txt | sed 's/["]//g' | awk '{print $1}'`  
+`IP=cat dig_lookup.txt | sed 's/["]//g' | awk -F'|' '{print $2}'`  
 
-`echo 'AS'$ASN 'owns:'$IP`
-> AS205715 owns: 5.59.171.0/24
+`echo 'AS'$ASN 'owns:'$IP`  
+
+> AS205715 owns: 5.59.171.0/24  
 
 Tot aquest procés es pot automatitzar mitjançant la creació d'un script per disposar de manera ràpida d'un ASN Lookup. A tall
 d'exemple s'inclou `asn_lookup.sh` que realitzarà tots els passos anteriors.
@@ -104,7 +105,9 @@ disposar d'aquests a la fase d'enumeració i escaneig.
 > 94.125.96.0/24  
 > 94.125.97.0/24  
 
-##### Altres eines per a Lookups
+---
+
+#### Altres eines per a Lookups
 
 A banda de les comandes que es poden utilitzar per defecte, existeixen eines que permetran la realització de lookups de 
 manera més fluida. Aquestes es poden trobar amb una cerca ràpida en repositoris com la [següent](https://github.com/topics/asn-lookup)
@@ -125,12 +128,16 @@ Al introduir el ASN, es realitzarà una cerca detallada en aquest cas sobre la I
 és probablement la que més interessarà ja que a banda de la informació bàsica sobre l'AS, es retorna informació relativa
 a BGP, com els veins i la posició d'aquests.
 
-- `sudo asn -o <nom_isp>` i  `sudo asn -o <nom_isp>`  
+- `sudo asn -o <nom_isp>` i  `sudo asn -a <nom_isp>`  
+- 
+![img_1.png](img_1.png)
 
 Realitzarà una cerca d'organitzacions per nom. De gran utilitat quan el nom de l'organització del que es disposa no coincideix 
 amb el nom assignat al AS.
 
 - `sudo asn -u $IP`  
+
+![img_2.png](img_2.png)
 
 Informació addicional sobre BGP i trànsit al analitzar la ISP i les seves relacions amb possibles veïns.
 

