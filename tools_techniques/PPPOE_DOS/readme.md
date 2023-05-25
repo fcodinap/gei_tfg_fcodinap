@@ -37,7 +37,9 @@ els serveis que proporciona als seus clients. Si BGP és la clau de l'encaminame
 és la pedra angular de l'encaminament intern, PPPoE és l'encarregat de generar aquells camins per on circularà el trànsit
 des d'un client a qualsevol punt de la xarxa, és per aixó que es parla també de protocol de generació de túnels.
 
-A la següent imatge es pot observar la seqüencia descrita anteriorment entre un client PPPoE i un Servidor PPPoE:
+A la següent imatge es pot observar la seqüencia descrita anteriorment entre un client PPPoE i un Servidor PPPoE. Aquesta
+s'ha obtingut de la captura de paquets mitjançant Wireshark de la que disposa el simulador GSN3 i que permet establir punts
+de captura en qualsevol enllaç de la xarxa. En aquest cas el punt és entre el OLT i un dels clients PPPoE de la xarxa (LAN2).
 
 ![img.png](img.png)
 
