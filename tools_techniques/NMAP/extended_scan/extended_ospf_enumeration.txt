@@ -1,0 +1,2 @@
+# Nmap 7.93 scan initiated Mon May 29 13:49:25 2023 as: nmap --script=broadcast-ospf2-discover -oG extended_ospf_enumeration.txt
+# Nmap done at Mon May 29 13:49:35 2023 -- 0 IP addresses (0 hosts up) scanned in 10.27 seconds

@@ -1,0 +1,6 @@
+# Nmap 7.93 scan initiated Mon May 29 13:40:34 2023 as: nmap -sO -oG extended_IP_enumeration.txt 100.64.0.0/24
+Host: 100.64.0.1 ()	Status: Up
+Host: 100.64.0.1 ()	Protocols: 1/open/icmp/, 6/open/tcp/, 17/open/udp/, 46/open|filtered/rsvp/, 47/open|filtered/gre/, 50/open|filtered/esp/, 132/open/sctp/	Ignored State: filtered (249)
+Host: 100.64.0.2 ()	Status: Up
+Host: 100.64.0.2 ()	Protocols: 1/open/icmp/, 6/open/tcp/, 47/open|filtered/gre/, 50/open|filtered/esp/, 51/open|filtered/ah/, 77/open|filtered/sun-nd/, 88/open|filtered/eigrp/, 132/open/sctp/	Ignored State: filtered (248)
+# Nmap done at Mon May 29 13:41:59 2023 -- 256 IP addresses (2 hosts up) scanned in 85.36 seconds

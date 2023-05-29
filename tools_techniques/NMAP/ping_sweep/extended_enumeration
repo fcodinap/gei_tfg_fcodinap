@@ -1,0 +1,4 @@
+# Nmap 7.93 scan initiated Mon May 29 12:55:15 2023 as: nmap -Pn -sS -sU -sV -oG extended_enumeration --top-ports 50 100.64.0.1
+Host: 100.64.0.1 ()	Status: Up
+Host: 100.64.0.1 ()	Ports: 23/open/tcp//telnet//Cisco router telnetd/, 67/open|filtered/udp//dhcps///, 138/open|filtered/udp//netbios-dgm///, 161/open/udp//snmp//SNMPv1 server; ciscoSystems SNMPv3 server (public)/, 162/open|filtered/udp//snmptrap///, 593/open|filtered/udp//http-rpc-epmap///, 626/open|filtered/udp//serialnumberd///, 631/open|filtered/udp//ipp///, 996/open|filtered/udp//vsinet///, 2048/open|filtered/udp//dls-monitor///, 49154/open|filtered/udp//unknown///	Ignored State: closed (89)
+# Nmap done at Mon May 29 12:57:43 2023 -- 1 IP address (1 host up) scanned in 148.73 seconds
