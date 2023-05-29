@@ -67,39 +67,6 @@ en aquesta llsita inicial. En escaneigs futurs ja s'analitzarà aquesta situaci�
 Els hosts que apareixin en aquesta llista seran hosts actius que responen a missatges ECHO REQUEST
 
 ---  
-
-#### Ping Sweep
-
-Es tracta d'un escaneig molt bàsic on s'envien sondes ICMP_REQUEST.
-
-#### Comanda: Ping Sweep  
-`nmap -sP <rang_adreces>`
-
-#### Execució  
-Una dels primers escanejos a realitzar serà el d'establir la superfície exposada de la xarxa, és a dir, des de la posició
-inicial de l'atacant, quins hosts són visibles. Per fer-ho es realitzarà un ping sweep amb els prefixes reservats per a 
-CGNAT i amb els prefixes que corresponen a IP publiques dels que te assignats la ISP. Totes aquestes adreces ja es troben
-en un arxiu creat durant la fase de reconeixement.
-
-`cat cgnat_prefix.txt > tmp_list`  
-`cat public_prefix.txt >> tmp_list `  
-`sudo nmap -sP -iL tmp_list `  
-`echo "" > tmp_list`  
-
-Degut a que s'estan escanejant multitud d'adreces, aquest pot allargar-se una mica. Una vegada s'ha realitzat es desen
-els hosts com a actius per a futurs escaneigs. Cal notar que s'ha realitzat mitjançant missatges ICMP i per tant és possible 
-que regles ACL o tallafocs hagin bloquejat molts d'aquests missatges i per tant existeixin molts més hosts dels que apareixen
-en aquesta llista inicial. En escaneigs futurs ja s'adreçarà aquesta situació, ara de moment interessa fer-se una idea 
-inicial de 'l'oberta' que es troba la xarxa.
-
-`cat active_hosts.txt | grep 'Nmap scan' | awk '{print $5}' > active_hosts.txt`  
-
-> 100.64.0.129  
-> 100.64.0.131  
-
-Els hosts que apareixin en aquesta llista seran hosts actius que responen a missatges ECHO REQUEST
-
----  
  
 #### Enumeració extensa de ports i serveis
 
