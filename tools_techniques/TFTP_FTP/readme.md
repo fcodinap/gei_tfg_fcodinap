@@ -4,7 +4,7 @@
 
 --- 
 
-### Obtenció arxiu de configuracions
+### Obtenció d'arxiu de configuracions
 
 #### Requisitis  
 - Accés remot al dispositiu  

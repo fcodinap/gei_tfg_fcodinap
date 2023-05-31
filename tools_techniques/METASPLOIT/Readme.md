@@ -67,13 +67,15 @@ Algunes d’aquestes variables són:
 - `LPORT` per definir ports locals   
 - `RPORTS` per definir port del target  
 
-Aquestes variables es poden definir mitjançant la comanda set. Al següent exemple es defineixen aquests objectius que es 
-voldran utilitzar per intentar connectar-se de manera remota mitjançant Telnet.Així mateix, si es vol definir una variable
-de manera global s'utilitzarà `setg` i els canvis es podran observar a qualsevol módul que s'utilitzi.
+Aquestes variables es poden definir mitjançant la comanda `setg` i els canvis es podran observar a qualsevol módul que 
+s'utilitzi.
 
 `set RHOSTS 100.64.0.1-5`  
 `set RPORT 23`  
 `setg SHOST 192.168.3.2`  
+
+Existeixen també variables específiques per a cada módul, que es podran llistar amb la comanda module info i establir els
+seus valors amb la comanda set variable
 
 ---  
 

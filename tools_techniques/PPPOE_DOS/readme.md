@@ -1,4 +1,4 @@
-## Disrupció de PPPoE
+## Disrupció de PPPoE Protocol
 
 ### Point-to-Point over Ethernet (PPPoE)
 

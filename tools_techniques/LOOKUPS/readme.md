@@ -26,7 +26,8 @@ de les que disposa així com els prefixes.
 Els IP lookups retornaran tota la informació disponible sobre una adreça i actualment n’existeixen centenars de disponibles. 
 Un exemple (el primer que apareix en una cerca a Google) seria WhatsMyIp , on introduint una direcció IP es rebrà un resum 
 d’informació relacionada amb aquella direcció com l’AS a qui es troba assignada aquesta o informació geogràfica.
-MÉS ENLLÀ DELS LOOKUPS
+
+### MÉS ENLLÀ DELS LOOKUPS
 Quan es treballa sobre la recopilació d’informació d’una ISP, a banda de les dades que es puguin obtenir de caire empresarial 
 com el CIF, adreces i d’altres, es voldrà obtenir tota aquella informació més específica com identificador AS, bloc d’adreces 
 IP de les que disposa, abast de la seva xarxa i possibles models de dispositius que utilitzi entre d’altres. De nou, aquesta 

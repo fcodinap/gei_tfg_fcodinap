@@ -44,6 +44,7 @@ ip address 100.64.0.129 255.255.255.128
 mtu 1492
 peer default ip address dhcp-pool CLIENT
 ppp authentication chap callin
+no shutdown
 
 ip dhcp pool CLIENT
 network 100.64.0.128 /25
@@ -55,8 +56,9 @@ snmp-server community pppoepublic RO
 snmp-server community pppoeprivate WR
 snmp-server chassis-id PPPoE2_Router
 
+username client password tfg
 username admin password pppoe
-username PPPOE2 password default
+username PPPOE1 password default
 
 bba-group pppoe global
 virtual-template 2
@@ -66,7 +68,7 @@ pppoe enable group global
 no shutdown
 
 interface g0/2
-ip address 10.0.13.2 255.255.255.252
+ip address 10.10.13.2 255.255.255.252
 no shutdown
 
 exit
@@ -74,8 +76,8 @@ exit
 router ospf 100
 router-id 5.5.5.5
 
-network 10.0.14.0 0.0.0.3 area 10
-network 10.0.13.0 0.0.0.3 area 10
+network 10.10.14.0 0.0.0.3 area 10
+network 10.10.13.0 0.0.0.3 area 10
 network 100.64.0.128 0.0.0.127 area 10
 
 interface g0/0

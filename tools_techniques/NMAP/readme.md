@@ -2,9 +2,7 @@
 ### Lloc Official Eina
 - https://nmap.org/
 
---- 
-
-
+---
 
 ### Descobriment de dispositius, enumeració de serveis i superfície exposada inicial
 
@@ -112,14 +110,41 @@ la opció -sO i cal tenir en conte que aquesta utilitzarà missatges ICMP, que t
 `sudo nmap --script=broadcast-ospf2-discover -oG extended_ospf_enumeration.txt`  
 `sudo nmap --script broadcast-pppoe-discover -oG extended_pppoe_enumeration.txt`  
 
-- En el segon escaneig de protocols IP s'ha realitzat un descobriment de hosts (eliminant la opció -Pn) ja que com que aquest
+En el segon escaneig de protocols IP s'ha realitzat un descobriment de hosts (eliminant la opció -Pn) ja que com que aquest
 es realitza mitjançant ICMP no te sentit realitzar-ho dues vegades.
 
-- El tercer i quart escaneig és possible que no retornin cap resultat ja que es realitzen sobre la interfície per on s'envien
+El tercer i quart escaneig és possible que no retornin cap resultat ja que es realitzen sobre la interfície per on s'envien
 i aquesta connecta amb un dispositiu de la capa d'accés que no hauria de formar part ni de l'àrea OSPF ni tractar-se d'un
 dispositiu que realitzi tasques de servidor PPPoE. Tot i així, al tractar-se d'escaneigs ràpids val la pena realitzar-los
 ja que resultats en aquests dos significaria que el disseny de la xarxa no s'ha realitzat correctament i portaria a una
-explotació de la xarxa sense haver d'accedir a la capa de distribució.
+explotació de la xarxa sense haver d'accedir a la capa de distribució. Aquestes dues comandes utilitzen com a tipus d'escaneig
+un tipus de script NSE que val la pena analitzar.
+
+##### Sobre broadcast-ospf2-discover i broadcast-pppoe-discover
+
+La majoria de tipus d'escaneigs amb NMAP fan ús de paquets TCP, UDP i ICMP en forma de sondes i en funció de les respostes
+que es reben generen un o altre resultat. Aquest funcionament és possible ja que la gran majoria de serveis i protocols 
+s'encapsulen en paquets TCP i UDP. Ara bé, hi ha protocols com PPPoE o OSPF entre molts d'altres que no s'encapsulen en 
+protocols de transport i per tant els escaneigs tradicionals no es podran dur a terme. El que es fa en canvi és utilititzar
+la propia naturalesa d'aquests protocols per a la seva ennumeració.
+
+En el cas de --script=broadcast-ospf2-discover, el seu funcionament serà molt semblant al que es pot veure descrit a l'apartat
+d'explotació OSPF i més senzill del que pot semblar revisant la seva implementació. Al executar-lo, aquest restarà a l'espera
+de poder capturar paquets Hello que un dispositiu OSPF emet per totes les seves interfícies actives. En cas de rebren un, 
+el script intentarà iniciar el procés d'establiment d'adjancéncia per obtenir tota la informació possible sobre la xarxa.
+
+A tall d'exemple, s'ha realitzat la captura de paquets sobre una interfície que connecta la MV atacant i un dispositius 
+de l'àrea OSPF. A la següent imatge es pot observar l'intercanvi de paquets entre la màquina que executa el script i un
+dispositiu del qual s'ha capturat el Hello.
+
+![img_2.png](img_2.png)
+
+En quant a --script broadcast-pppoe-discover, aquest tindrà un funcionament similar pero utilitzant els mecanismes del 
+protocol PPPoE. En aquest cas, el dispositiu encarregat d'iniciar les comunicacions és el client, que utilitza missatges
+PADI generats per el script, de manera similar a com es realitza la fabricació de paquets amb Scappy que es pot veure
+descrit a l'apartat corresponent, i que restarà a l'espera de rebre missatges de resposta PADO d'un servidor PPPoE
+que permetran continuar amb el procés de creació de sessió i obtenir per tant informació sobre aquell dispositiu gràcies
+als missatges intercanviats.
 
 Per últim, un escaneig que pot ajudar a acabar d'establir la topologia i disseny de la xarxa és una cerca de portes d'enllaç.
 Aquest únicament servirà per poder identificar alguns dispositius com servidors PPPoE o el BGN. Es tracta d'un escaneig
