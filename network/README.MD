@@ -1,8 +1,10 @@
 # Notes sobre les Xarxes del treball  
   
-## Adreçament Utilitzat
+- ## Adreçament Utilitzat
 
-### Public IPs  
+---
+
+- ### Public IPs  
 `203.0.113.0/25 - 203.0.113.128/25`
 
 - Per a les adreces públiques s'utilitzarà el rang d'adreces reservat per a documentació descrit a [RFC5737](https://www.rfc-editor.org/rfc/rfc5737.html).  
@@ -11,8 +13,8 @@
 - La resta d'adreces públiques utilitzaran el bloc *203.0.113.10.128/25* 
   
 &nbsp;  
-  
-### CG-NAT IPs  
+
+- ### CG-NAT IPs  
 `100.64.0.0/10`
 
 - Per a la pool de CGNAT s'utilitzarà el rang d'adreces descrit a [RFC6598](https://www.rfc-editor.org/rfc/rfc6598.html) reservat per aquest proposit. 
@@ -20,7 +22,7 @@
   
 &nbsp;  
    
-### LANS i altres privades   
+- ### LANS i altres privades   
 `192.168.0.0/16 - 172.16.0.0/12 - 10.0.0.0/8`
 
 - Per a les xarxes locals dels endpoints s'utilitzaran adreces dels blocs *192.168.0.0/16* i *172.16.0.0/12*, intentant utilitzar de manera eficient els espais d'adreces.  
@@ -28,7 +30,9 @@
 
 &nbsp;  
    
-## Projectes de GSN3 i Dispositius
+- ## Projectes de GSN3 i Dispositius
+
+---
 
 - Per a importar correctament les xarxes a GSN3 s'ha de copiar el projecte amb la xarxa al directori de projectes de GSN3 o hi haurà problemes amb els paths.  
 - S'ha de disposar de tots els dispositius a virtualitzar ja creats a GSN3 (veure llista de dispositius).  
@@ -44,3 +48,8 @@ Set device to default conf:
     write erase  
     reload  
     
+> **Todo List** 
+> - Corregir ortografia.
+> - Millorar exemples d'eines i tècniques
+> - Sol·lucionar alguns problemes de configuració de la xarxa **tfg_isp**
+> - Anomenar correctament imatges de cada apartat.

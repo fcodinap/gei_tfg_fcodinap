@@ -41,9 +41,9 @@ concret per obtenir credencials d'algun tipus i així realitzar d'altres atacs a
 
 Una representació senzilla de l'atac es pot veure a les següents imatges:
 
-![img_2.png](img_2.png)
+![img_2.png](BGPMITM1.png)
 
-![img_3.png](img_3.png)
+![img_3.png](BGPMITM2.png)
 
 Tot i que el concepte per a dur a terme aquest atac resulta senzill, execurar-lo en un entorn real resulta molt complicat.
 En primer lloc es necessita haver pogut comprometre un encaminador BGP, ja que si be un BGP acceptarà sense comprovar-ne
@@ -72,13 +72,13 @@ fer desapareixer prefixes sencers de la xarxa. A les següents imatges s'exempli
 - La ruta normal de la que tots els dispositius disposen a la seva taula d'encaminaments per anar de source a destí és la 
 que es veu marcada en verd a la primera imatge.
 
-![img.png](img.png)
+![img.png](BGP1.png)
 
 - L'encaminador en vermell, que ha sigut vícitima d'un atac i a la que se li han modificat rutes d'encaminament, transmet
 als seus veins, que per anar a destí, han de passar per ell, pero en comptes de reenviar els paquets, aquest els envia
 a un dispositiu NULL o bé els descarta tots sense enviar missatges d'error de tornada.
 
-![img_1.png](img_1.png)
+![img_1.png](BGP2.png)
 
 Tal i com es comentava, la modificació d'una taula BGP d'un AS amb pocs veïns no tindrà molta repercusió, ja que poc trànsit
 passa per aquest AS en comparació amb d'altres més grans. Així doncs, AS de tipus Trànsit en gran mesura i Multihomed que

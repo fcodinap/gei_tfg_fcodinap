@@ -2,7 +2,7 @@
 
 ---
 
-![img.png](xarxa3topo.png)![](C:\Users\Ungra\Documents\GitHub\gei_tfg_fcodinap\network\network2.1\network2.1.png)
+![img.png](xarxa3topo.png)
 
 ---
 **Versió:** *2.1*  
